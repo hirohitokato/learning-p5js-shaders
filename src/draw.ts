@@ -5,6 +5,5 @@ import { shaders } from "./setup";
 export const draw = (p: p5): void => {
   p.background(220);
   p.shader(shaders);
-  p.rect(0, 0, p.width, p.height);
-  console.log(p.frameRate() + "fps");
+  p.rect(0, 0, p.width / 2, p.height / 2);
 };
