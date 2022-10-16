@@ -8,20 +8,22 @@ uniform vec2 u_resolution;
  void main(){
   // position of the pixel divided by resolution, to get normalized 
   // positions on the canvas
+  // jsから渡された解像度情報(createCanvasで設定したサイズ)を使い、現在の位置を
+  // 0.0-1.0の正規化された情報に変換する
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
   // Lets use the pixels position on the x-axis as our gradient for the red color
   // Where the position is closer to 0.0 we get black (st.x = 0.0)
   // Where the position is closer to width (defined as 1.0) we get red (st.x = 1.0)
 
-  gl_FragColor = vec4(st.x,0.0,0.0,1.0); // R,G,B,A
+  // ※ gl_FragColorへの代入はソースコード中で１回だけになるよう注意すること
 
-  // you can only have one gl_FragColor active at a time, but try commenting the others out
-  // try the green component
+  // 赤のみに設定する場合
+  // gl_FragColor = vec4(st.x,0.0,0.0,1.0); // R,G,B,A
 
-  //gl_FragColor = vec4(0.0,st.x,0.0,1.0); 
+  // 緑のみに設定する場合
+  // gl_FragColor = vec4(0.0,st.x,0.0,1.0); 
 
-  // try both the x position and the y position
-  
-  //gl_FragColor = vec4(st.x,st.y,0.0,1.0); 
+  // X位置を赤の強さに、Y位置を青の強さにする
+  gl_FragColor = vec4(st.x,0.0,st.y,1.0); 
 }
