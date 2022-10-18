@@ -23,8 +23,8 @@ export const draw = (p: p5): void => {
   // shader() sets the active shader with our shader
   p.shader(shaders);
 
-  // lets send the resolution, mouse, and time to our shader
-  // before sending mouse + time we modify the data so it's more easily usable by the shader
+  // 解像度、マウス位置、時間の３つをシェーダーに転送
+  // マウス位置と時間は使いやすいように変換しておく
   shaders.setUniform("resolution", [p.width, p.height]);
   shaders.setUniform("mouse", p.map(p.mouseX, 0, p.width, 0, 7));
   shaders.setUniform("time", p.frameCount * 0.01);
