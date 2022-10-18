@@ -1,6 +1,6 @@
 import p5 from "p5";
 import { createSketch } from "./p5-util/sketch";
-import { preload, setup, windowResized, draw } from "./lesson/basic_gradient_texcoord/program";
+import { preload, setup, windowResized, draw } from "./lesson/interactivity/program";
 
 const sketch = createSketch({
   preload,

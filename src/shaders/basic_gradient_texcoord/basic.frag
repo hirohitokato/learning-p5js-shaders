@@ -5,7 +5,7 @@ precision mediump float;
 varying vec2 vTexCoord;
 
 void main(){
-  // copy the vTexCoord
+  // テクスチャ座標をコピー
   // we can use it to access every pixel on the screen
   vec2 coord = vTexCoord;
   
