@@ -15,7 +15,7 @@ uniform vec2 resolution;
 uniform float time;
 uniform float mouse;
 
-// this is a function that turns an rgb value that goes from 0 - 255 into 0.0 - 1.0
+// 0-255で色指定すると0.0〜1.0からなるvec3を作って返す
 vec3 rgb(float r, float g, float b){
   return vec3(r / 255.0, g / 255.0, b / 255.0);
 }
@@ -52,11 +52,13 @@ vec4 poly(float x, float y, float size, float sides, float rotation, vec3 col){
 void main() {
 
   // ※ここが2.0だと図形が右上に移動してしまっていた。Retinaディスプレイの問題？
+  //  …でもなさそう。`p.pixelDensity(1);`を付けたら悪化した。
   vec2 center = resolution * 1.0; // draw the shape at the center of the screen
   // vec2 center = resolution * 2.0; // draw the shape at the center of the screen
   float size = resolution.y * 0.5; // make the shape a quarter of the screen height
   float sides = mod(floor(mouse), 7.0) + 3.0; // slowly increase the sides, when it reaches 10 sides, go back down to 3
   float rotation = time; // rotation is in radians, but for time it doesnt really matter
+  /* 時間を渡すことで経時変化を実現している */
 
   // lets make our shape in the center of the screen. We have to subtract half of it's width and height just like in p5
   float x = center.x ;
