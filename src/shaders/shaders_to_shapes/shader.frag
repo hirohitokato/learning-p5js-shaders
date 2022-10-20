@@ -1,3 +1,4 @@
+#ifdef GL_ES
 precision mediump float;
 #endif
 
@@ -15,7 +16,7 @@ vec2 rotate2D (vec2 _st, float _angle) {
     return _st;
 }
 
-vec2 tile (vec2 _st, float _zoom) {
+vec2 tile(vec2 _st, float _zoom) {
     _st *= _zoom;
     return fract(_st);
 }
