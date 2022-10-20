@@ -10,7 +10,7 @@ export const preload = (p: p5): void => {
 export const setup = (p: p5): void => {
   // shaders require WEBGL mode to work
   p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
-  p.noStroke();
+  // p.noStroke();
 };
 
 export const windowResized = (p: p5, event?: Event): void => {
