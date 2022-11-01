@@ -6,7 +6,7 @@
 import p5 from "p5";
 
 // a shader variable
-export let theShader: p5.Shader;
+let theShader: p5.Shader;
 let shaderBg: p5.Graphics;
 
 let x: number;
@@ -28,7 +28,8 @@ export const setup = (p: p5): void => {
   p.noStroke();
 
   // initialize the createGraphics layers
-  shaderBg = p.createGraphics(p.windowWidth, p.windowHeight, p.WEBGL);
+  // shaderBg = p.createGraphics(p.windowWidth, p.windowHeight, p.WEBGL);
+  shaderBg = p.createGraphics(710, 400, p.WEBGL);
 
   // turn off the cg layers stroke
   shaderBg.noStroke();
