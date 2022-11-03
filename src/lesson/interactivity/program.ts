@@ -1,6 +1,5 @@
 import type p5 from "p5";
 
-let shapeShader;
 export let shaders: p5.Shader;
 
 export const preload = (p: p5): void => {
