@@ -40,7 +40,7 @@ export const draw = (p: p5) => {
   shaders.setUniform("mouse", [p.mouseX, p.map(p.mouseY, 0, p.height, p.height, 0)]);
 
   // passing the shaderTexture layer geometry to render on
-  shaderTexture.rect(0, 0, p.width, p.height);
+  // shaderTexture.rect(0, 0, p.width, p.height);
 
   p.background(255);
 
